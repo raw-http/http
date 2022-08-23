@@ -4,7 +4,7 @@ use std::{cmp, fmt, str};
 
 use bytes::Bytes;
 
-use super::{ErrorKind, InvalidUri};
+use super::InvalidUri;
 use crate::byte_str::ByteStr;
 
 /// Represents the path component of a URI
@@ -63,7 +63,7 @@ impl PathAndQuery {
                     b'"' |
                     b'{' | b'}' => {},
 
-                    _ => return Err(ErrorKind::InvalidUriChar.into()),
+                    _ => {}, //return Err(ErrorKind::InvalidUriChar.into()),
                 }
             }
 
@@ -86,7 +86,7 @@ impl PathAndQuery {
                             break;
                         }
 
-                        _ => return Err(ErrorKind::InvalidUriChar.into()),
+                        _ => {}, //return Err(ErrorKind::InvalidUriChar.into()),
                     }
                 }
             }
